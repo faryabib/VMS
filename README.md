@@ -1,2 +1,80 @@
-# VMS
-cancer vascularity prediction
+* =Endothelial Index (EI score)=
+
+** Description
+
+=calculate_ei= use the expression of 7 genes (ANGPT2,CDH5,ESAM,ESM1,ERG,ICAM2,TIE1) to predict the Endothelial Index (EI score) as described in [[https://doi.org/10.1172/JCI136655][Kan et al. J Clin Invest. 2020]].
+
+=calculate_ei= is provided as executable for =Mac OS= and =Linux=
+
+** Installation
+
+Clone the repository
+
+#+BEGIN_SRC sh
+git clone https://github.com/faryabib/VMS
+
+#+END_SRC
+
+Unzip the Mac OS executable
+
+#+BEGIN_SRC sh
+tar -xvzf calculate_ei_mac.tar.gz
+#+END_SRC
+
+Unzip the Linux executable
+
+#+BEGIN_SRC sh
+tar -xvzf calculate_ei_linux.tar.gz
+#+END_SRC
+
+
+** Usage
+
+#+BEGIN_SRC sh
+cd calculate_ei_linux
+./calculate_ei -o <output_path>/<output_file_name_prefix> <input_path>/<input_file.csv>
+#+END_SRC
+
+For example:
+
+sample_data.csv
+
+#+BEGIN_EXAMPLE
+cd ~/Downloads/VMS/calculate_ei_linux
+
+>head sample_data.csv
+gene_names,ANGPT2,CDH5,ESAM,ESM1,ERG,ICAM2,TIE1
+GSM4153778,11.6627936,7.574327036,9.725281589,7.888517738,9.372130505,7.69417231,11.21008336
+GSM4153779,12.44443671,9.497866406,11.18526661,7.850518607,7.25149758,9.081058762,11.92972628
+GSM4153780,12.39260419,7.516861269,9.644321871,7.599887081,8.89141826,5.610776214,11.34552363
+GSM4153781,11.97339486,8.51061936,10.32245464,7.457715252,7.681007086,7.216987375,
+GSM4153782,12.30601569,9.898122626,11.14612824,8.458641973,8.687287341,8.906697465,11.43711602
+GSM4153783,11.65130849,7.289907788,10.30179196,7.834592484,6.677682913,6.22373856,10.40676537
+GSM4153784,11.66599384,11.00671694,7.530884668,9.489371876,7.360468446,6.176275173,10.19075171
+GSM4153785,12.54977768,10.48514238,12.662005,6.627013701,10.11647378,9.959585933,11.67461051
+GSM4153786,12.40301155,8.818550428,10.35665207,7.110257679,5.608936949,5.245584496,12.35981491
+#+END_EXAMPLE
+
+Calculate the EI score for each sample
+#+BEGIN_EXAMPLE
+./calculate_ei -o ~/Downloads/output_ei ~/Downloads/VMS/sample_data.csv
+#+END_EXAMPLE
+
+** Documentation
+
+#+BEGIN_EXAMPLE
+Usage: calculate_ei [-h] [-o --output] input
+
+Calculate the Endothelial Index (EI) of the input file
+
+positional arguments:
+  input        the path to the input file (should be a .xlsx or .csv file)
+
+optional arguments:
+  -h, --help   show this help message and exit
+  -o --output  specify an output file
+
+Available options:
+	-h,--help			Show this help text
+	-o,--output			Specify path and the prefix of the output file name 				
+#+END_EXAMPLE
