@@ -8,12 +8,16 @@
 
 ** Installation
 
-Clone the repository
+Download the files
 
 #+BEGIN_SRC sh
-git clone https://github.com/faryabib/VMS
-
+https://github.com/faryabib/VMS/releases/download/V1/calculate_ei_linux.tar.gz
 #+END_SRC
+
+#+BEGIN_SRC sh
+https://github.com/faryabib/VMS/releases/download/V2/calculate_ei_mac.tar.gz
+#+END_SRC
+
 
 Unzip the Mac OS executable
 
