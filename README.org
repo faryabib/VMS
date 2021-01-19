@@ -8,7 +8,7 @@
 
 ** Installation
 
-The Pip install will be available in a new future. Meanwhile, you can download one of the following ZIP files depending on your OS.
+The Pip installation will be available in a new future. Meanwhile, you can download one of the following compressed files depending on your OS.
 
 #+BEGIN_SRC sh
 https://github.com/faryabib/VMS/releases/download/V1/calculate_ei_linux.tar.gz
